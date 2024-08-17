@@ -1,6 +1,7 @@
 const baseUrl = "http://localhost:3030/data/games"; 
 const token = localStorage.getItem("accessToken")
 export async function create(gameData) {
+    const token = localStorage.getItem("accessToken")
     try {
         const response = await fetch(baseUrl, {
             method: "POST",

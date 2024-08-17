@@ -9,12 +9,13 @@ import Logout from './components/logout/logout';
 import Register from './components/register/register';
 import GameCreate from './components/game-create/game-create';
 import GameList from './components/listed-games/listedGames';
+import GameDetails from './components/game-details/gameDetails';
 
 const App = () => {
   const location = useLocation();
 
  
-  const hideHeader = location.pathname === "/login" || location.pathname === "/register"  || location.pathname === "/create-game";
+  const hideHeader = location.pathname === "/login" || location.pathname === "/register"  
 
   return (
     <AuthProvider>
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/create-game" element={<GameCreate />} />
           <Route path="/games" element={<GameList />} />
+          <Route path="/game-details/:id" element={<GameDetails />} />
         </Routes>
       </div>
     </AuthProvider>

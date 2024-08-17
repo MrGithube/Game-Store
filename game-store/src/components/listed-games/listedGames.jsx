@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as gameService from '../../services/gamesService';
+import GameItem from './listedGameItem/listedGameItem';
 
 export default function GameList() {
   const [games, setGames] = useState([]);
@@ -34,39 +35,13 @@ export default function GameList() {
             <li>
               <a className="is_active" href="#!" data-filter="*">Show All</a>
             </li>
-            <li>
-              <a href="#!" data-filter=".adv">Adventure</a>
-            </li>
-            <li>
-              <a href="#!" data-filter=".str">Strategy</a>
-            </li>
-            <li>
-              <a href="#!" data-filter=".rac">Racing</a>
-            </li>
+       
           </ul>
 
           <div className="row trending-box">
-            {games.map((game, index) => (
-              <div key={index} className={`col-lg-3 col-md-6 align-self-center mb-30 trending-items ${game.category}`}>
-                <div className="item">
-                  <div className="thumb">
-                    <Link to={`/games/${game.id}`}>
-                      <img src={game.imageUrl} alt={game.name} />
-                    </Link>
-                    <span className="price">
-                      <em>${game.originalPrice}</em>${game.discountedPrice}
-                    </span>
-                  </div>
-                  <div className="down-content">
-                    <span className="category">{game.category}</span>
-                    <h4>{game.name}</h4>
-                    <Link to={`/games/${game.id}`}>
-                      <i className="fa fa-shopping-bag"></i>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
+          {games.map(game => ( 
+            <GameItem key={game._id} {...game}/> 
+          ))}
           </div>
 
           <div className="row">

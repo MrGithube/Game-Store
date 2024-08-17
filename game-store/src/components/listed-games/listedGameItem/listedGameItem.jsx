@@ -1,26 +1,27 @@
-
+import { Link } from 'react-router-dom';
 
 export default function GameItem({
-    name ,
-    category ,
+    _id,         
+    name,
+    category,
     price,
     tags,
     summary
-}){
+}) {
 
-
-    return (  <div className="col-lg-3 col-md-6">
-        <div className="item">
-          <div className="thumb">
-            <a href="product-details.html"><img src="assets/images/trending-03.jpg" alt="" /></a>
-            <span className="price"><em>$64</em>$44</span>
-          </div>
-          <div className="down-content">
-            <span className="category">Action</span>
-            <h4>Assasin Creed</h4>
-            <a href="product-details.html"><i className="fa fa-shopping-bag"></i></a>
-          </div>
+    return (
+        <div className="col-lg-3 col-md-6">
+            <div className="item">
+                <div className="thumb">
+                    <Link to={`/game-details/${_id}`}><img src={tags} alt={name} /></Link>
+                    <span className="price"><em>${price}</em></span> 
+                </div>
+                <div className="down-content">
+                    <span className="category">{category}</span>
+                    <h4>{name}</h4>
+                    <Link to={`/game-details/${_id}`}><i className="fa fa-shopping-bag"></i></Link> {/* Corrected the Link */}
+                </div>
+            </div>
         </div>
-      </div>
-      )
+    );
 }
