@@ -1,8 +1,13 @@
-# React + Vite
+First, clone this repository to your local machine using: git clone https://github.com/MrGithube/Game-Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+In order to run the application first you must install the all the required dependencies with npm install then navigate to the game-store folder with cd game-store after that
+you have to run the command npm run dev and that is how you can host the application on your local machine
+lastly you need to right clip on the server folder and open it in an integrated terminal and there you have to run the command node server.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Make sure you have the following installed on your system:
+
+Node.js (which includes npm)
+A code editor like Visual Studio Code
+
