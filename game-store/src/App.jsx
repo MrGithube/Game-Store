@@ -10,6 +10,8 @@ import Register from './components/register/register';
 import GameCreate from './components/game-create/game-create';
 import GameList from './components/listed-games/listedGames';
 import GameDetails from './components/game-details/gameDetails';
+import GameEdit from './components/game-edit/gameEdit';
+
 
 const App = () => {
   const location = useLocation();
@@ -31,6 +33,8 @@ const App = () => {
           <Route path="/create-game" element={<GameCreate />} />
           <Route path="/games" element={<GameList />} />
           <Route path="/game-details/:id" element={<GameDetails />} />
+          <Route path="/game-edit/:id" element={<GameEdit />} />
+
         </Routes>
       </div>
     </AuthProvider>
